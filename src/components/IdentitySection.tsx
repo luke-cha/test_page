@@ -1,30 +1,36 @@
 import { IDENTITY } from '../constants/data'
+import { HiArrowRight } from 'react-icons/hi'
 
 export default function IdentitySection() {
   return (
-    <section className="section-padding bg-bg-gray">
-      <div className="content-width space-y-8">
-        <h2 className="text-2xl md:text-3xl font-semibold text-text-main leading-snug">
-          {IDENTITY.title}
-        </h2>
+    <section className="card p-6 md:p-8">
+      <p className="text-base font-semibold text-text-primary leading-snug">
+        {IDENTITY.title}
+      </p>
 
-        <div className="text-base text-text-main leading-relaxed space-y-1">
-          {IDENTITY.description.map((line, i) => (
-            <p key={i}>{line}</p>
-          ))}
-        </div>
+      <div className="divider my-5" />
 
-        <div className="text-base text-text-main leading-relaxed space-y-1 mt-8">
+      <div className="text-sm text-text-secondary leading-relaxed space-y-0.5">
+        {IDENTITY.description.map((line, i) => (
+          <p key={i}>{line}</p>
+        ))}
+      </div>
+
+      <div className="mt-5 p-4 rounded-2xl bg-mint-50 border border-mint-200">
+        <div className="text-sm text-text-primary leading-relaxed space-y-0.5">
           {IDENTITY.ctaMessage.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
         </div>
+      </div>
 
+      <div className="mt-5">
         <a
           href={IDENTITY.ctaLink}
-          className="inline-block mt-4 px-8 py-3 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-light transition-colors"
+          className="btn-mint"
         >
           {IDENTITY.ctaText}
+          <HiArrowRight className="w-4 h-4" />
         </a>
       </div>
     </section>

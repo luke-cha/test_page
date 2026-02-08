@@ -1,38 +1,32 @@
 import { NEWS } from '../constants/data'
-import { HiOutlineBookOpen, HiExternalLink } from 'react-icons/hi'
+import { HiExternalLink } from 'react-icons/hi'
 
 export default function NewsSection() {
   return (
-    <section className="section-padding bg-bg-gray">
-      <div className="content-width space-y-8">
-        <h2 className="text-2xl md:text-3xl font-semibold text-text-main flex items-center gap-2">
-          <span className="text-2xl">🔥</span> {NEWS.title}
-        </h2>
+    <section className="card p-6 md:p-8">
+      <p className="text-base font-semibold text-text-primary mb-4">
+        {NEWS.title}
+      </p>
 
-        <div className="border border-gray-200 rounded-xl p-6 bg-white space-y-6">
-          <div className="flex items-start gap-4">
-            <HiOutlineBookOpen className="w-8 h-8 text-primary shrink-0 mt-1" />
-            <div>
-              <p className="text-base text-text-main leading-relaxed">
-                {NEWS.description}
-              </p>
-              <a
-                href={NEWS.ctaLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-primary hover:underline"
-              >
-                {NEWS.ctaText}
-                <HiExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
+      <p className="text-sm text-text-secondary leading-relaxed">
+        {NEWS.description}
+      </p>
 
-          <div className="border-t border-gray-100 pt-4">
-            <p className="text-sm text-text-muted">{NEWS.videoText}</p>
-          </div>
-        </div>
-      </div>
+      <a
+        href={NEWS.ctaLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 mt-3 text-sm text-mint-600 font-medium hover:text-mint-400 transition-colors"
+      >
+        {NEWS.ctaText}
+        <HiExternalLink className="w-3.5 h-3.5" />
+      </a>
+
+      <div className="divider my-5" />
+
+      <p className="text-xs text-text-muted">
+        {NEWS.videoText}
+      </p>
     </section>
   )
 }

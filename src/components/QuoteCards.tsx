@@ -2,25 +2,23 @@ import { QUOTE_CARDS } from '../constants/data'
 
 export default function QuoteCards() {
   return (
-    <section className="section-padding">
-      <div className="content-width">
-        <h2 className="text-2xl md:text-3xl font-semibold text-text-main mb-10">
-          {QUOTE_CARDS.title}
-        </h2>
+    <section className="card p-6 md:p-8">
+      <p className="text-base font-semibold text-text-primary mb-5">
+        {QUOTE_CARDS.title}
+      </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {QUOTE_CARDS.quotes.map((quote, i) => (
-            <div
-              key={i}
-              className="border border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-md transition-all"
-            >
-              <span className="text-4xl text-primary leading-none">"</span>
-              <p className="mt-2 text-base text-text-main leading-relaxed">
-                {quote}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="space-y-3">
+        {QUOTE_CARDS.quotes.map((quote, i) => (
+          <div
+            key={i}
+            className="flex items-start gap-3 p-4 rounded-2xl bg-bg"
+          >
+            <span className="text-mint-400 text-lg leading-none mt-0.5">"</span>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              {quote}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )

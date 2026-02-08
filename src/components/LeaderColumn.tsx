@@ -3,44 +3,42 @@ import { HiArrowRight } from 'react-icons/hi'
 
 export default function LeaderColumn() {
   return (
-    <section className="section-padding">
-      <div className="content-width">
-        <h2 className="text-2xl md:text-3xl font-semibold text-text-main mb-10">
-          {LEADER_COLUMNS.title}
-        </h2>
+    <section className="card p-6 md:p-8">
+      <p className="text-base font-semibold text-text-primary mb-5">
+        {LEADER_COLUMNS.title}
+      </p>
 
-        <div className="space-y-4">
-          {LEADER_COLUMNS.columns.map((col, i) => (
-            <a
-              key={i}
-              href="#"
-              className="block border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition-all group"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1">
-                  <span className="inline-block text-xs text-primary font-medium bg-blue-50 px-2 py-0.5 rounded mb-2">
-                    {col.category}
-                  </span>
-                  <h3 className="text-base font-medium text-text-main group-hover:text-primary transition-colors">
-                    {col.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-text-muted">{col.author}</p>
-                </div>
-                <HiArrowRight className="w-5 h-5 text-text-muted group-hover:text-primary transition-colors mt-1 shrink-0" />
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="mt-8 text-center">
+      <div className="space-y-0">
+        {LEADER_COLUMNS.columns.map((col, i) => (
           <a
-            href={LEADER_COLUMNS.moreLink}
-            className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+            key={i}
+            href="#"
+            className="flex items-center justify-between py-3.5 group"
+            style={i < LEADER_COLUMNS.columns.length - 1 ? { borderBottom: '1px solid #F0F0F0' } : {}}
           >
-            {LEADER_COLUMNS.moreText}
-            <HiArrowRight className="w-4 h-4" />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs text-mint-600 font-medium bg-mint-50 px-2 py-0.5 rounded-full">
+                  {col.category}
+                </span>
+                <span className="text-xs text-text-muted">{col.author}</span>
+              </div>
+              <p className="text-sm text-text-primary group-hover:text-mint-600 transition-colors truncate">
+                {col.title}
+              </p>
+            </div>
+            <HiArrowRight className="w-4 h-4 text-text-muted group-hover:text-mint-600 transition-colors shrink-0 ml-3" />
           </a>
-        </div>
+        ))}
+      </div>
+
+      <div className="mt-4 text-center">
+        <a
+          href={LEADER_COLUMNS.moreLink}
+          className="text-sm text-text-muted hover:text-text-primary transition-colors"
+        >
+          {LEADER_COLUMNS.moreText} →
+        </a>
       </div>
     </section>
   )

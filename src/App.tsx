@@ -11,9 +11,9 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-bg text-text-primary">
       <Header />
-      <main>
+      <main className="content-width flex flex-col gap-4 px-5 md:px-8 py-6">
         <HeroSection />
         <PhilosophySection />
         <QuoteCards />

@@ -2,39 +2,35 @@ import { PHILOSOPHY } from '../constants/data'
 
 export default function PhilosophySection() {
   return (
-    <section className="section-padding bg-bg-gray">
-      <div className="content-width space-y-10">
-        {/* Quote */}
-        <blockquote className="text-xl md:text-2xl font-semibold text-text-main leading-relaxed border-l-4 border-primary pl-6">
-          {PHILOSOPHY.quote}
-        </blockquote>
+    <section className="card p-6 md:p-8">
+      <p className="text-lg font-semibold text-text-primary leading-relaxed">
+        {PHILOSOPHY.quote}
+      </p>
 
-        {/* Body */}
-        <div className="text-base text-text-main leading-relaxed space-y-1">
+      <div className="divider my-5" />
+
+      <div className="space-y-4 text-sm text-text-secondary leading-relaxed">
+        <div className="space-y-0.5">
           {PHILOSOPHY.body.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
         </div>
 
-        {/* Message */}
-        <div className="text-base text-text-main leading-relaxed space-y-1">
+        <div className="space-y-0.5">
           {PHILOSOPHY.message.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
         </div>
 
-        {/* Closing */}
-        <div className="text-base text-text-main leading-relaxed space-y-1">
+        <div className="space-y-0.5 text-text-primary font-medium">
           {PHILOSOPHY.closing.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
         </div>
+      </div>
 
-        {/* CTA */}
-        <a
-          href={PHILOSOPHY.ctaLink}
-          className="inline-block mt-6 px-8 py-3 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-light transition-colors"
-        >
+      <div className="mt-6">
+        <a href={PHILOSOPHY.ctaLink} className="btn-dark">
           {PHILOSOPHY.ctaText}
         </a>
       </div>
